@@ -1,0 +1,43 @@
+.accordion-tabs-minimal {
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+ }
+
+.accordion-tabs-minimal .tab-header-and-content {
+	display: inline;
+	list-style: none;
+	margin-left: 1em;
+}
+
+.accordion-tabs-minimal .tab-link {
+	color: #333;
+	display: inline-block;
+	padding: 1em;
+	text-decoration: none;
+}
+
+.accordion-tabs-minimal .tab-link:hover {
+	color: #477dca;
+}
+
+.accordion-tabs-minimal .tab-link:focus {
+	outline: none;
+}
+
+.accordion-tabs-minimal .tab-link.is-active {
+	background-color: #fff;
+	border: 1px solid #dcdcdc;
+	border-bottom: 1px solid #fff;
+	color: #477dca;
+	margin-bottom: -1px;
+}
+
+.accordion-tabs-minimal .tab-content {
+	background-color: #fff;
+	border: 1px solid #dcdcdc;
+	display: none;
+	float: left;
+	padding: 1em;
+	width: 100%;
+}
