@@ -1,15 +1,15 @@
 <?php
 /**
  * Plugin Name: WordPress Styleguide
- * Plugin URI: https://github.com/johncionci/wordpress-front-end-developer
- * Description: WordPress Front End Developer provides an easy way for theme developers see exactly what viewport resolution they are currently viewing.
+ * Plugin URI: https://github.com/oomphinc/wordpress-styleguide-plugin
+ * Description: A plugin to display basic site typography and components
  * Version: 1.0
- * Author: John Cionci, Oomph Inc.
- * Author URI: https://github.com/johncionci/wordpress-front-end-developer
+ * Author: John Cionci, J. Hogue, Oomph Inc.
+ * Author URI: https://github.com/oomphinc/wordpress-styleguide-plugin
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *
- * Copyright 2012-2014 John Cionci, Oomph Inc.
+ * Copyright 2012-2014 John Cionci, J. Hogue, Oomph Inc.
  *
  * GNU General Public License, Free Software Foundation <http://creativecommons.org/licenses/GPL/2.0/>
  *
