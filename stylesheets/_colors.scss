@@ -1,0 +1,73 @@
+.swatches {
+  margin: 0 auto;
+}
+
+.color-group {
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: $size__site-gutter*2;
+}
+
+.color-swatch {
+	display: inline-block;
+	height: 70vh;
+	line-height: 1.2;
+	margin: 0 0 $size__site-gutter 0;
+	position: relative;
+	min-width: 100px;
+	flex-grow: 1;
+}
+
+.color-swatch-label {
+	background: $color__pure-white;
+	font-size: 10pt;
+	font-weight: normal;
+	padding: 10px;
+	position: absolute;
+		right: 10px;
+		bottom: 10px;
+		left: 10px;
+	text-align: left;
+
+	dt:first-of-type {
+		padding-top: 0;
+	}
+}
+
+/* Mixin to output classes */
+@mixin color-swatch($variable, $class-name) {
+
+	.color-#{$class-name} {
+		background: $variable;
+
+		.hex-code::before {
+			content: '#{$variable}';
+		}
+	}
+}
+
+@include color-swatch($color__black, 'black');
+@include color-swatch($color__neutral, 'neutral');
+@include color-swatch($color__neutral-highlight, 'neutral-highlight');
+@include color-swatch($color__white, 'white');
+@include color-swatch($color__pure-white, 'pure-white');
+
+
+@include color-swatch($color__primary, 'primary');
+@include color-swatch($color__primary-light, 'primary-light');
+@include color-swatch($color__primary-dark, 'primary-dark');
+
+@include color-swatch($color__accent, 'accent');
+@include color-swatch($color__accent-alt, 'accent-alt');
+@include color-swatch($color__highlight, 'highlight');
+
+
+/* Overrides for certain colours. */
+.color-white {
+	border-top: 1px solid $color__neutral-highlight;
+	border-bottom: 1px solid $color__neutral-highlight;
+}
+
+.color-pure-white .color-swatch-label {
+	border: 1px solid $color__neutral-highlight;
+}

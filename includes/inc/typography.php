@@ -1,112 +1,127 @@
 <?php
 /**
- * The template for displaying the styleguide page.
+ * Style guide panel to demonstrate typography.
  *
- * @package WordPress
- * @subpackage wordpress-styleguide
- * @author Oomph, Inc.
- * @link http://www.oomphinc.com
+ * @package strikebase
  */
+?>
 
-get_header(); ?>
+<h2 class="panel-title">Typography</h2>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<p>Because Strikebase is primarily an app, we&rsquo;re using system fonts for all of the UI text. By a happy coincidence, system fonts are looking pretty good these days, although I&rsquo;m probably biased by spending the majority of my days working on a Mac.</p>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<header class="entry-header">
-					<h1 class="entry-title">Styleguide</h1>
-				</header><!-- .entry-header -->
+<h3>Line height</h3>
 
-				<div class="entry-content">
+<p>Line-height is universally set at 1.4, which is a nice comfortable height for body copy. For headings, the line height is a bit tighter.</p>
 
-					<ul class="accordion-tabs-minimal">
-						<li class="tab-header-and-content">
-							<a href="#" class="tab-link is-active">Typography</a>
-							<div class="tab-content">
-								<p><strong>These are basic markup and typographic styles for your site and how to use them.</strong> Most of these options are available through the TinyMCE editor window in the CMS admin, but some will require knowledge of coding HTML.</p>
-								<p>We use <code>background-image: url(http://basehold.it/i/31/FF69B4)</code> to debug the vertical rhythm of the site. Add it to the container for main text blocks, and use <code>background-position: 0px 22px</code> to adjust it so that it hits just on the baseline of the first paragraph line.</p>
-								<ul>
-									<li><a href="#headings">Headings</a></li>
-									<li><a href="#groupings">Groupings</a></li>
-									<li><a href="#text">Text Elements</a></li>
-									<li><a href="#tables">Tables</a></li>
-								</ul>
-								<h1 id="headings" class="group-heading">Headings</h1>
-								<hr>
-								<h1>Heading 1 <a href="#">with a Link</a></h1>
-								<p>Some filler paragraph text for better spacing and vertical rhythm of elements. I always thought that MadMax was a great movie, but I have not yet seen the newest one and I really wish that I saw it in the theater.</p>
-								<h2>Heading 2 <a href="#">with a Link</a></h2>
-								<p>Some filler paragraph text for better spacing and vertical rhythm of elements. I always thought that MadMax was a great movie, but I have not yet seen the newest one and I really wish that I saw it in the theater.</p>
-								<h3>Heading 3 <a href="#">with a Link</a></h3>
-								<p>Some filler paragraph text for better spacing and vertical rhythm of elements. I always thought that MadMax was a great movie, but I have not yet seen the newest one and I really wish that I saw it in the theater.</p>
-								<h4>Heading 4 <a href="#">with a Link</a></h4>
-								<p>Some filler paragraph text for better spacing and vertical rhythm of elements. I always thought that MadMax was a great movie, but I have not yet seen the newest one and I really wish that I saw it in the theater.</p>
-								<h5>Heading 5 <a href="#">with a Link</a></h5>
-								<p>Some filler paragraph text for better spacing and vertical rhythm of elements. I always thought that MadMax was a great movie, but I have not yet seen the newest one and I really wish that I saw it in the theater.</p>
-								<h6>Heading 6 <a href="#">with a Link</a></h6>
-								<p>Some filler paragraph text for better spacing and vertical rhythm of elements. I always thought that MadMax was a great movie, but I have not yet seen the newest one and I really wish that I saw it in the theater.</p>
-								<h1 id="groupings" class="group-heading">Groupings</h1>
-								<hr>
-								<h2>Paragraphs</h2>
-								<p>All paragraphs are wrapped in <code>&lt;p&gt;</code> tags. Additionally, <code>&lt;p&gt;</code> elements can be wrapped with a <code>&lt;blockquote&gt;</code> element <em>if the <code>p</code> element is indeed a quote</em>. Historically, <code>blockquote</code> has been used purely to force indents, but this is now achieved using CSS. Reserve <code>blockquote</code> for quotes.</p>
-								<pre class="examplecode"><code>&lt;p&gt;This is a paragraph&lt;/p&gt;</code></pre>
-								<h2>Blockquotes</h2>
-								<p>The <code>blockquote</code> element represents a section that is being quoted from another source. In this example, we also follow the blockquote with a <code>cite</code> element containing a link to the quoted source.</p>
-								<div class="example">
-									<blockquote cite="http://hansard.millbanksystems.com/commons/1947/nov/11/parliament-bill#column_206">
-										<p>Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise. Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.</p>
-									</blockquote>
-									<p>
-										<cite><a href="http://hansard.millbanksystems.com/commons/1947/nov/11/parliament-bill#column_206" target="_blank">- Parliament Bill 1947, Column 206</a>
-										</cite>
-									</p>
-								</div>
-								<pre class="examplecode"><code>&lt;blockquote cite="optional link to source material"&gt;&lt;p&gt;Quoted text&lt;/p&gt;&lt;/blockquote"&gt;&lt;p&gt;— &lt;cite&gt;&lt;a href="optional link to source material"&gt;Source of the Quote&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;</code></pre>
-								<h2>Horizontal rule</h2>
-								<p>The <code>hr</code> element (seen above and below) represents a paragraph-level thematic break, e.g. a scene change in a story, or a transition to another topic within a section of a reference book.</p>
-								<h2>Ordered list</h2>
-								<p>The <code>&lt;ol&gt;</code> element denotes an ordered list, and various numbering schemes are available through the CSS (including 1,2,3… a,b,c… i,ii,iii… and so on). Each item requires a surrounding <code>&lt;li&gt;</code> tag to denote individual items within the list (as you may have guessed, <code>li</code> stands for list item).</p>
-								<div class="example">
-									<ol>
-										<li>This is an ordered list.</li>
-										<li>This is the second item, which contains a sub list
-											<ol>
-												<li>This is the sub list, which is also ordered.</li>
-												<li>It has two items.</li>
-											</ol>
-										</li>
-										<li>This is the final item on this list.</li>
-									</ol>
-								</div>
-								<pre class="examplecode"><code>&lt;ol&gt;&lt;li&gt;List item one&lt;/li&gt;&lt;li&gt;List item two&lt;ol&gt;&lt;li&gt;Nested list item one&lt;/li&gt;&lt;li&gt;Nested list item two&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;/ol&gt;</code></pre>
-								<h2>Unordered list</h2>
-								<p>The <code>&lt;ul&gt;</code> element denotes an unordered list (ie. a list of loose items that don’t require numbering, as a bulleted list). Again, each item requires a surrounding <code>&lt;li&gt;</code> tag to denote individual items. Here is an example list showing the constituent parts of the British Isles:</p>
-								<div class="example">
-									<ul>
-										<li>United Kingdom of Great Britain and Northern Ireland:
-											<ul>
-												<li>England
-													<ul>
-														<li>Another nested list</li>
-														<li>Yet another nested line item</li>
-													</ul>
-												</li>
-												<li>Scotland</li>
-												<li>Wales</li>
-												<li>Northern Ireland</li>
-											</ul>
-										</li>
-										<li>Republic of Ireland</li>
-										<li>Isle of Man</li>
-										<li>Channel Islands:
-											<ul>
-												<li>Bailiwick of Guernsey</li>
-												<li>Bailiwick of Jersey</li>
-											</ul>
-										</li>
-									</ul>
-								</div>
+<p>Keeping the line height of text consistent helps maintain a balanced baseline. As a general rule, only change the line height if you have a specific reason for doing so.</p>
+
+<h3>Headings</h3>
+
+<div class="typography-headings">
+	<span class="label">Heading one</span>
+	<h1>The quick brown fox jumps over the lazy dog</h1>
+
+	<span class="label">Heading two</span>
+	<h2>Jinxed wizards pluck ivy from the big quilt</h2>
+
+	<span class="label">Heading three</span>
+	<h3>The five boxing wizards jump quickly</h3>
+
+	<span class="label">Heading four</span>
+	<h4>Sphinx of black quartz, judge my vow</h4>
+
+	<span class="label">Heading five</span>
+	<h5>Pack my box with five dozen liquor jugs</h5>
+
+	<span class="label">Heading six</span>
+	<h6>Five quacking zephyrs jolt my wax bed</h6>
+</div>
+
+
+<p><strong>These are basic markup and typographic styles for your site and how to use them.</strong> Most of these options are available through the TinyMCE editor window in the CMS admin, but some will require knowledge of coding HTML.</p>
+<p>We use <code>background-image: url(http://basehold.it/i/31/FF69B4)</code> to debug the vertical rhythm of the site. Add it to the container for main text blocks, and use <code>background-position: 0px 22px</code> to adjust it so that it hits just on the baseline of the first paragraph line.</p>
+<ul>
+	<li><a href="#headings">Headings</a></li>
+	<li><a href="#groupings">Groupings</a></li>
+	<li><a href="#text">Text Elements</a></li>
+	<li><a href="#tables">Tables</a></li>
+</ul>
+<h1 id="headings" class="group-heading">Headings</h1>
+<hr>
+<h1>Heading 1 <a href="#">with a Link</a></h1>
+<p>Some filler paragraph text for better spacing and vertical rhythm of elements. I always thought that MadMax was a great movie, but I have not yet seen the newest one and I really wish that I saw it in the theater.</p>
+<h2>Heading 2 <a href="#">with a Link</a></h2>
+<p>Some filler paragraph text for better spacing and vertical rhythm of elements. I always thought that MadMax was a great movie, but I have not yet seen the newest one and I really wish that I saw it in the theater.</p>
+<h3>Heading 3 <a href="#">with a Link</a></h3>
+<p>Some filler paragraph text for better spacing and vertical rhythm of elements. I always thought that MadMax was a great movie, but I have not yet seen the newest one and I really wish that I saw it in the theater.</p>
+<h4>Heading 4 <a href="#">with a Link</a></h4>
+<p>Some filler paragraph text for better spacing and vertical rhythm of elements. I always thought that MadMax was a great movie, but I have not yet seen the newest one and I really wish that I saw it in the theater.</p>
+<h5>Heading 5 <a href="#">with a Link</a></h5>
+<p>Some filler paragraph text for better spacing and vertical rhythm of elements. I always thought that MadMax was a great movie, but I have not yet seen the newest one and I really wish that I saw it in the theater.</p>
+<h6>Heading 6 <a href="#">with a Link</a></h6>
+<p>Some filler paragraph text for better spacing and vertical rhythm of elements. I always thought that MadMax was a great movie, but I have not yet seen the newest one and I really wish that I saw it in the theater.</p>
+<h1 id="groupings" class="group-heading">Groupings</h1>
+<hr>
+<h2>Paragraphs</h2>
+<p>All paragraphs are wrapped in <code>&lt;p&gt;</code> tags. Additionally, <code>&lt;p&gt;</code> elements can be wrapped with a <code>&lt;blockquote&gt;</code> element <em>if the <code>p</code> element is indeed a quote</em>. Historically, <code>blockquote</code> has been used purely to force indents, but this is now achieved using CSS. Reserve <code>blockquote</code> for quotes.</p>
+<pre class="examplecode"><code>&lt;p&gt;This is a paragraph&lt;/p&gt;</code></pre>
+<h2>Blockquotes</h2>
+<p>The <code>blockquote</code> element represents a section that is being quoted from another source. In this example, we also follow the blockquote with a <code>cite</code> element containing a link to the quoted source.</p>
+<div class="example">
+	<blockquote cite="http://hansard.millbanksystems.com/commons/1947/nov/11/parliament-bill#column_206">
+		<p>Many forms of Government have been tried, and will be tried in this world of sin and woe. No one pretends that democracy is perfect or all-wise. Indeed, it has been said that democracy is the worst form of government except all those other forms that have been tried from time to time.</p>
+	</blockquote>
+	<p>
+		<cite><a href="http://hansard.millbanksystems.com/commons/1947/nov/11/parliament-bill#column_206" target="_blank">- Parliament Bill 1947, Column 206</a>
+		</cite>
+	</p>
+</div>
+<pre class="examplecode"><code>&lt;blockquote cite="optional link to source material"&gt;&lt;p&gt;Quoted text&lt;/p&gt;&lt;/blockquote"&gt;&lt;p&gt;— &lt;cite&gt;&lt;a href="optional link to source material"&gt;Source of the Quote&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;</code></pre>
+<h2>Horizontal rule</h2>
+<p>The <code>hr</code> element (seen above and below) represents a paragraph-level thematic break, e.g. a scene change in a story, or a transition to another topic within a section of a reference book.</p>
+<h2>Ordered list</h2>
+<p>The <code>&lt;ol&gt;</code> element denotes an ordered list, and various numbering schemes are available through the CSS (including 1,2,3… a,b,c… i,ii,iii… and so on). Each item requires a surrounding <code>&lt;li&gt;</code> tag to denote individual items within the list (as you may have guessed, <code>li</code> stands for list item).</p>
+<div class="example">
+	<ol>
+		<li>This is an ordered list.</li>
+		<li>This is the second item, which contains a sub list
+			<ol>
+				<li>This is the sub list, which is also ordered.</li>
+				<li>It has two items.</li>
+			</ol>
+		</li>
+		<li>This is the final item on this list.</li>
+	</ol>
+</div>
+<pre class="examplecode"><code>&lt;ol&gt;&lt;li&gt;List item one&lt;/li&gt;&lt;li&gt;List item two&lt;ol&gt;&lt;li&gt;Nested list item one&lt;/li&gt;&lt;li&gt;Nested list item two&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;&lt;/ol&gt;</code></pre>
+<h2>Unordered list</h2>
+<p>The <code>&lt;ul&gt;</code> element denotes an unordered list (ie. a list of loose items that don’t require numbering, as a bulleted list). Again, each item requires a surrounding <code>&lt;li&gt;</code> tag to denote individual items. Here is an example list showing the constituent parts of the British Isles:</p>
+<div class="example">
+	<ul>
+		<li>United Kingdom of Great Britain and Northern Ireland:
+			<ul>
+				<li>England
+					<ul>
+						<li>Another nested list</li>
+						<li>Yet another nested line item</li>
+					</ul>
+				</li>
+				<li>Scotland</li>
+				<li>Wales</li>
+				<li>Northern Ireland</li>
+			</ul>
+		</li>
+		<li>Republic of Ireland</li>
+		<li>Isle of Man</li>
+		<li>Channel Islands:
+			<ul>
+				<li>Bailiwick of Guernsey</li>
+				<li>Bailiwick of Jersey</li>
+			</ul>
+		</li>
+	</ul>
+</div>
 <pre class="examplecode"><code>&lt;ul&gt;
 &lt;li&gt;List item one&lt;/li&gt;
 &lt;li&gt;List item two
@@ -363,91 +378,3 @@ And the mome raths outgrabe.<p></p>
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
-<p><a href="#menu">Back to Top ↑</a></p>
-							</div><!-- .tab-content -->
-						</li><!-- .tab-header-and-content -->
-						<li class="tab-header-and-content">
-							<a href="#" class="tab-link">Components</a>
-							<div class="tab-content">
-								<ul>
-									<li><a href="#forms">Forms</a></li>
-								</ul>
-								<p>Basic <code>&lt;form&gt;</code> container and inner common element styles</p>
-								<p>The <code>&lt;fieldset&gt;</code> element groups related fields within a form and should have a title attribute and a corresponding <code>&lt;legend&gt;</code>. The <code>&lt;label&gt;</code> element ensures field descriptions are associated with their corresponding form widgets, and are very important for form accesibility.</p>
-								<h1 id="forms" class="group-heading">Forms</h1>
-								<hr>
-								<div class="example">
-<form class="form">
-<fieldset title="Sample input field types">
-<legend class="form--legend">Input Field Types</legend>
-<p><label for="text">Text Input</label><br>
-<input id="text" class="form--input" name="text" required="required" type="text"><br>
-<small class="element-caption">This is a sample input field of type=”text”</small></p>
-<p><label for="password">Password</label><br>
-<input id="password" class="form--input" name="password" required="required" type="password"><br>
-<small class="element-caption">This is a sample input field of type=”password”</small></p>
-<p><label for="email">Email Address</label><br>
-<input id="email" class="form--input" name="email" required="required" type="email" placeholder="you@example.com"><br>
-<small class="element-caption">This is a sample input field of type=”email”</small></p>
-<p><label for="url">Web Address</label><br>
-<input id="url" class="form--input" name="url" type="url" placeholder="http://example.com"><br>
-<small class="element-caption">This is a sample input field of type=”url”</small></p>
-<p><label for="phone">Phone Number</label><br>
-<input id="phone" class="form--input" name="phone" type="tel" placeholder="000-000-0000"><br>
-<small class="element-caption">This is a sample input field of type=”number”</small></p>
-<p><label for="number">Number String</label><br>
-<input id="number" class="form--input" name="number" type="number" placeholder="1234567890"><br>
-<small class="element-caption">This is a sample input field of type=”number”</small></p>
-<p><label for="textarea">Textarea</label><br>
-<textarea id="textarea" class="form--textarea" name="textarea" rows="8"></textarea><br>
-<small class="element-caption">This is a sample textarea for multi-line user input</small></p></fieldset>
-<fieldset title="Selectable Option Items">
-<legend>Selectable Option Items</legend>
-<p><label for="select">Select</label></p>
-<p><select class="form--select" name="select"><optgroup label="Option Group"><option value="">Option One</option><option value="">Option Two</option><option value="">Option Three</option></optgroup>
-</select></p>
-<p><small class="element-caption">A select form element contains more than one <code>&lt;option&gt;</code> element</small></p>
-<ul class="horizontal-list">
-<li><label class="check" for="checkbox1"><input id="checkbox1" checked="checked" name="checkbox" type="checkbox"> Choice A</label></li>
-<li><label class="check" for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B</label></li>
-<li><label class="check" for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
-</ul>
-<p><small class="element-caption">Checkboxes can be selected independently, and more than one can be selected</small></p>
-<ul class="horizontal-list">
-<li><label class="radio" for="radio1"><input id="radio1" class="radio" checked="checked" name="radio" type="radio"> Option 1</label></li>
-<li><label class="radio" for="radio2"><input id="radio2" class="radio" name="radio" type="radio"> Option 2</label></li>
-<li><label class="radio" for="radio3"><input id="radio3" class="radio" name="radio" type="radio"> Option 3</label></li>
-</ul>
-<p><small class="element-caption">Radio buttons are inter-dependent, and usually only one can be chosen</small></p></fieldset>
-<fieldset title="Buttons">
-<legend>Button Types: input type=”submit”, <code>&lt;button&gt;</code>, input type=”reset” and an <code>&lt;a&gt;</code></legend>
-<p><input id="submit" class="primary-action" name="submit" type="submit" value="Post comment"><br>
-<button class="primary-action">Preview</button><br>
-<input id="reset" class="secondary-action" name="reset" type="reset" value="Clear Form"><br>
-<a title="Cancel" href="#">Cancel</a></p></fieldset>
-</form>
-</div>
-<p><a href="#menu">Back to Top ↑</a></p>
-							</div><!-- .tab-content -->
-						</li><!-- .tab-header-and-content -->
-						<li class="tab-header-and-content">
-							<a href="#" class="tab-link">Colors</a>
-							<div class="tab-content">
-								<p>Maybe Someday!</p>
-							</div><!-- .tab-content -->
-						</li><!-- .tab-header-and-content -->
-					</ul><!-- .accordion-tabs-minimal -->
-
-				</div><!-- .entry-content -->
-
-				<footer class="entry-footer">
-					<div class="entry-meta">
-					</div><!-- .entry-meta -->
-				</footer><!-- .entry-footer -->
-			</article><!-- #post-## -->
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
-<?php
-get_footer();

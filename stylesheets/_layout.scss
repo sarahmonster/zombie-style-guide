@@ -1,0 +1,105 @@
+// Page structure.
+body {
+	margin: 0;
+}
+
+.page {
+	margin: 0 auto;
+	max-width: 1400px;
+	padding: 0;
+	overflow: auto;
+}
+
+.styleguide .entry-content {
+	max-width: calc(100% - 15rem);
+}
+
+// Split into two columns on tablets and above.
+@include tablet {
+	.navigation {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		border-right: 1px solid $color__neutral-highlight;
+		padding-top: 0;
+		width: 15rem;
+	}
+
+	.entry-content {
+		margin-left: 18rem;
+		min-height: calc(100vh - 5.375rem);
+	}
+}
+
+// Navigation.
+.navigation {
+	background: $color__pure-white;
+	text-align: center;
+}
+
+.navigation .logo {
+	padding: $size__site-gutter;
+}
+
+.navigation ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+	width: 100%;
+
+	a {
+		border-top: 1px solid $color__white;
+		color: $color__black;
+		display: block;
+		padding: $size__site-gutter;
+		text-decoration: none;
+	}
+
+	a:hover {
+		background: transparentize($color__white, 0.75);
+	}
+
+	a.active {
+		background: transparentize($color__white, 0.5);
+		border-right: 4px solid $color__neutral;
+		color: $color__neutral;
+		font-weight: 500;
+	}
+
+	li:last-of-type a {
+		border-bottom: 1px solid $color__neutral-highlight;
+	}
+}
+
+// Content.
+.content {
+	padding: $size__site-gutter;
+
+	@include tablet {
+		padding: $size__site-gutter*2;
+	}
+}
+
+// Content sections/panels.
+.panel {
+	border-bottom: 4px solid $color__neutral;
+	min-height: 85vh;
+	padding: $size__site-gutter*2 0;
+}
+
+.panel-title {
+	margin-bottom: $size__site-gutter*2;
+}
+
+.copy-text {
+	width: 100%;
+}
+
+p {
+	max-width: 640px; // Keeps line lengths readable.
+}
+
+h3 {
+	padding-top: $size__site-gutter;
+}
