@@ -24,7 +24,6 @@
 
 			<aside id="sidebar" class="navigation">
 				<div class="logo">
-
 				</div>
 
 				<ul>
