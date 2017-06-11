@@ -37,7 +37,6 @@ function wp_styleguide_page_template( $template ) {
 			return $page_template;
 		}
 	}
-
 	return $template;
 }
 add_filter( 'template_include', 'wp_styleguide_page_template', 99 );

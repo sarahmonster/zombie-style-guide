@@ -101,5 +101,6 @@ p {
 }
 
 h3 {
-	padding-top: $size__site-gutter;
+	border-bottom: 2px solid;
+	padding: $size__site-gutter 0 5px 0;
 }

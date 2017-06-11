@@ -1,6 +1,12 @@
 .typography-headings {
+	.label {
+		border-bottom: 2px solid;
+		margin: 20px 0;
+		color: $color__neutral-text;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
-		padding: 0 0 $size__site-gutter 0;
+		padding: 10px 0 20px 0;
 		margin: 0;
 	}
 }
