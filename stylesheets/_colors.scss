@@ -14,7 +14,7 @@
 	line-height: 1.2;
 	margin: 0 0 $size__site-gutter 0;
 	position: relative;
-	min-width: 100px;
+	min-width: 200px;
 	flex-grow: 1;
 }
 
@@ -32,35 +32,12 @@
 	dt:first-of-type {
 		padding-top: 0;
 	}
-}
 
-/* Mixin to output classes */
-@mixin color-swatch($variable, $class-name) {
-
-	.color-#{$class-name} {
-		background: $variable;
-
-		.hex-code::before {
-			content: '#{$variable}';
-		}
+	.color-code,
+	.color-variable {
+		margin: 0;
 	}
 }
-
-@include color-swatch($color__black, 'black');
-@include color-swatch($color__neutral, 'neutral');
-@include color-swatch($color__neutral-highlight, 'neutral-highlight');
-@include color-swatch($color__white, 'white');
-@include color-swatch($color__pure-white, 'pure-white');
-
-
-@include color-swatch($color__primary, 'primary');
-@include color-swatch($color__primary-light, 'primary-light');
-@include color-swatch($color__primary-dark, 'primary-dark');
-
-@include color-swatch($color__accent, 'accent');
-@include color-swatch($color__accent-alt, 'accent-alt');
-@include color-swatch($color__highlight, 'highlight');
-
 
 /* Overrides for certain colours. */
 .color-white {

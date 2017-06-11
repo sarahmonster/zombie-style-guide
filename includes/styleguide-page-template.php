@@ -27,31 +27,29 @@
 				</div>
 
 				<ul>
-					<li><a href="#colours">Colours</a></li>
-					<li><a href="#typography">Typography</a></li>
-					<li><a href="#buttons">Buttons &amp; forms</a></li>
-					<li><a href="#navigation">Navigation</a></li>
-					<li><a href="#components">Components</a></li>
-					<li><a href="#icons">Icons</a></li>
+					<li><a href="#colors"><?php esc_html_e( 'Colours', 'zombiestyleguide' ); ?></a></li>
+					<li><a href="#typography"><?php esc_html_e( 'Typography', 'zombiestyleguide' ); ?></a></li>
+					<li><a href="#buttons-forms"><?php esc_html_e( 'Buttons & Forms', 'zombiestyleguide' ); ?></a></li>
+					<li><a href="#navigation"><?php esc_html_e( 'Navigation', 'zombiestyleguide' ); ?></a></li>
+					<li><a href="#components"><?php esc_html_e( 'Components', 'zombiestyleguide' ); ?></a></li>
+					<li><a href="#icons"><?php esc_html_e( 'Icons', 'zombiestyleguide' ); ?></a></li>
 				</ul>
 
 			</aside>
 
 			<div class="entry-content">
 
-				<section class="panel" id="colours">
-					<?php include( 'inc/colours.php' ); ?>
+				<section class="panel" id="colors">
+					<?php include( 'inc/colors.php' ); ?>
 				</section>
 
 				<section class="panel" id="typography">
 					<?php include( 'inc/typography.php' ); ?>
 				</section>
 
-				<section class="panel" id="buttons">
+				<section class="panel" id="buttons-forms">
 					<?php include( 'inc/buttons-and-forms.php' ); ?>
 				</section>
-
-
 				<section class="panel" id="components">
 					<?php include( 'inc/components.php' ); ?>
 				</section><!-- content -->

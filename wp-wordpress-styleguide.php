@@ -52,3 +52,8 @@ function wp_styleguide_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'wp_styleguide_scripts' );
+
+/**
+ * Include our settings page.
+ */
+require plugin_dir_path( __FILE__ ) . '/includes/admin/zombiestyleguide-settings.php';

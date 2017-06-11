@@ -89,7 +89,7 @@ h3 {
   line-height: 1.2;
   margin: 0 0 20px 0;
   position: relative;
-  min-width: 100px;
+  min-width: 200px;
   flex-grow: 1; }
 
 .color-swatch-label {
@@ -104,62 +104,8 @@ h3 {
   text-align: left; }
   .color-swatch-label dt:first-of-type {
     padding-top: 0; }
-
-/* Mixin to output classes */
-.color-black {
-  background: #302816; }
-  .color-black .hex-code::before {
-    content: "#302816"; }
-
-.color-neutral {
-  background: #544A35; }
-  .color-neutral .hex-code::before {
-    content: "#544A35"; }
-
-.color-neutral-highlight {
-  background: #DBD4C6; }
-  .color-neutral-highlight .hex-code::before {
-    content: "#DBD4C6"; }
-
-.color-white {
-  background: #F2EFEB; }
-  .color-white .hex-code::before {
-    content: "#F2EFEB"; }
-
-.color-pure-white {
-  background: #FFFFFD; }
-  .color-pure-white .hex-code::before {
-    content: "#FFFFFD"; }
-
-.color-primary {
-  background: #3B5345; }
-  .color-primary .hex-code::before {
-    content: "#3B5345"; }
-
-.color-primary-light {
-  background: #50715e; }
-  .color-primary-light .hex-code::before {
-    content: "#50715e"; }
-
-.color-primary-dark {
-  background: #203325; }
-  .color-primary-dark .hex-code::before {
-    content: "#203325"; }
-
-.color-accent {
-  background: #A6302C; }
-  .color-accent .hex-code::before {
-    content: "#A6302C"; }
-
-.color-accent-alt {
-  background: #E8B136; }
-  .color-accent-alt .hex-code::before {
-    content: "#E8B136"; }
-
-.color-highlight {
-  background: #f2d592; }
-  .color-highlight .hex-code::before {
-    content: "#f2d592"; }
+  .color-code, .color-variable {
+  margin: 0; }
 
 /* Overrides for certain colours. */
 .color-white {
