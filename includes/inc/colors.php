@@ -5,13 +5,21 @@
  * @package strikebase
  */
 
+/*
+ *
+ *
+ */
+function zombiestyleguide_get_contrast($hexcolor){
+    return (hexdec($hexcolor) > 0xffffff/2) ? 'light':'dark';
+}
 
 /*
  * Output a formatted swatch for a given colour variable.
  */
-function zombiestyleguide_show_colour_swatch( $variable, $code = false ) {
+function zombiestyleguide_show_colour_swatch( $variable, $code ) {
 	?>
-	<div class="color-swatch color-<?php echo trim( $variable, '$' ); ?>" style="background-color: <?php echo $code; ?>">
+	<div class="color-swatch color-<?php echo trim( $variable, '$' ); ?> <?php echo zombiestyleguide_get_contrast( $code ); ?>-swatch" style="background-color: <?php echo $code; ?>">
+
 		<dl class="color-swatch-label">
 			<dt>Code</dt>
 			<dd class="color-code"><?php echo $code; ?></dd>

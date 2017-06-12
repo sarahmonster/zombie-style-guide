@@ -88,7 +88,8 @@ p {
   -ms-flex-pack: center;
   justify-content: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.025); }
 
 .color-swatch-label {
   color: #FAFAFC;
@@ -107,12 +108,11 @@ p {
     margin: 0; }
 
 /* Overrides for certain colours. */
-.color-white {
-  border-top: 1px solid #AAABAF;
-  border-bottom: 1px solid #AAABAF; }
+.light-swatch {
+  border: 2px solid rgba(0, 0, 0, 0.05); }
 
-.color-pure-white .color-swatch-label {
-  border: 1px solid #AAABAF; }
+.light-swatch .color-swatch-label {
+  color: #34353B; }
 
 .typography-headings .label {
   border-bottom: 2px solid;

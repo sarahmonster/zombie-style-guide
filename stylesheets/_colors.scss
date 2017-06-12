@@ -13,9 +13,10 @@
 	line-height: 1.2;
 	margin: 0 0 $size__site-gutter 0;
 	width: 200px;
-	  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 8px 14px rgba(0,0,0,0.025);
 }
 
 .color-swatch-label {
@@ -42,11 +43,10 @@
 }
 
 /* Overrides for certain colours. */
-.color-white {
-	border-top: 1px solid $color__neutral-highlight;
-	border-bottom: 1px solid $color__neutral-highlight;
+.light-swatch {
+	border: 2px solid rgba(0, 0, 0, 0.05);
 }
 
-.color-pure-white .color-swatch-label {
-	border: 1px solid $color__neutral-highlight;
+.light-swatch .color-swatch-label {
+	color: $color__black;
 }
