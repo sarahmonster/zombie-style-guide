@@ -31,6 +31,7 @@
 					<li><a href="#typography"><?php esc_html_e( 'Typography', 'zombiestyleguide' ); ?></a></li>
 					<li><a href="#buttons-forms"><?php esc_html_e( 'Buttons & Forms', 'zombiestyleguide' ); ?></a></li>
 					<li><a href="#navigation"><?php esc_html_e( 'Navigation', 'zombiestyleguide' ); ?></a></li>
+					<li><a href="#media"><?php esc_html_e( 'Media', 'zombiestyleguide' ); ?></a></li>
 					<li><a href="#components"><?php esc_html_e( 'Components', 'zombiestyleguide' ); ?></a></li>
 					<li><a href="#icons"><?php esc_html_e( 'Icons', 'zombiestyleguide' ); ?></a></li>
 				</ul>
@@ -53,11 +54,15 @@
 
 				<section class="zombiestyleguide-panel" id="navigation">
 					<?php include( 'inc/navigation.php' ); ?>
-				</section><!-- content -->
+				</section>
+
+				<section class="zombiestyleguide-panel" id="media">
+					<?php include( 'inc/media.php' ); ?>
+				</section>
 
 				<section class="zombiestyleguide-panel" id="components">
 					<?php include( 'inc/components.php' ); ?>
-				</section><!-- content -->
+				</section>
 
 			</div><!-- .content -->
 
