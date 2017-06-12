@@ -74,7 +74,8 @@ function zombiestyleguide_color_lookup( $variable, $code ) {
 		if ( array_key_exists( $code, $color_variables ) ) :
 			return $color_variables[$code];
 		else :
-			zombiestyleguide_color_lookup( $code, $color_variables[$code] );
+			// Pfft, too hard to process. Let's bail.
+			return false;
 		endif;
 	endif;
 
