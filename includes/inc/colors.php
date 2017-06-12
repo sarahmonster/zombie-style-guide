@@ -23,52 +23,129 @@ function zombiestyleguide_show_colour_swatch( $variable, $code = false ) {
 }
 
 /*
- * Read a file containing colour variables.
+ * Split a string containing a bunch of colour variables into an indexed array of variables.
  */
-function zombiestyleguide_read_colour_variables( $file ) {
-	$raw_text = file_get_contents( $file );
+function zombiestyleguide_output_colour_variables( $variable_string ) {
+	global $color_variables;
 
-	$meta_variable_pattern = '/\$\S*:\s*\$[a-z0-9\-\_]*/mi';
+	if (!is_array($color_variables)) :
+		$color_variables = array();
+	endif;
 
-	/*
-	 * Get all the colour variables that refer to color codes.
-	 * Matches hex, rgb(a), HSL(a)
-	 * @link http://www.regexpal.com/97509
-	 */
-	$hex_code_pattern = '/\$\S*:\s*#[a-z0-9]*/mi';
-	$color_code_pattern = '/\$\S*:\s*(#([\da-f]{3}){1,2}|(rgb|hsl)a\((\d{1,3}%?,\s?){3}(1|0?\.\d+)\)|(rgb|hsl)\(\d{1,3}%?(,\s?\d{1,3}%?){2}\))/mi';
-	$pattern = '/^Tags:\s?[a-z,\s-]+$/mi';
-	preg_match_all( $color_code_pattern, $raw_text, $color_codes );
+	$return = array();
+
+	// Explode our variable string into individual variables.
+	$variables = explode( ';', $variable_string );
 
 	// Iterate through our variables to create an indexed array of variables => code.
-	$variables = array();
-	foreach( $color_codes[0] as $color_code ) {
-		$bits = explode( ':', $color_code );
-		$variable = $bits[0];
-		$code = $bits[1];
-		$variables[$variable] = $code;
-	}
+	foreach( $variables as $variable ) :
+		if ( '' === $variable ) {
+			break;
+		}
 
-	//print_r( $variables );
-	return $variables;
+		$bits = explode( ':', $variable );
+		$index = $bits[0];
+		$code = trim( $bits[1] );
+
+		zombiestyleguide_show_colour_swatch( $index, zombiestyleguide_color_lookup( $index, $code ) );
+	endforeach;
 }
 
+/*
+ * Recursively look up a colour code from our global array.
+ *
+ */
+function zombiestyleguide_color_lookup( $variable, $code ) {
+	global $color_variables;
+
+	// Matches hex, rgb(a), HSL(a)
+	$color_code_pattern = '/(#([\da-f]{3}){1,2}|(rgb|hsl)a\((\d{1,3}%?,\s?){3}(1|0?\.\d+)\)|(rgb|hsl)\(\d{1,3}%?(,\s?\d{1,3}%?){2}\))/i';
+
+	// Matches a variable referring to another variable.
+	$meta_variable_pattern = '/\$[a-z0-9\-\_]*/i';
+
+	// Valid colour code? Okay!
+	if ( preg_match( $color_code_pattern, $code ) ) :
+		// Add it to our index.
+		$color_variables[$variable] = $code;
+		return $code;
+
+	elseif ( preg_match( $meta_variable_pattern, $code ) ) :
+		if ( array_key_exists( $code, $color_variables ) ) :
+			return $color_variables[$code];
+		else :
+			zombiestyleguide_color_lookup( $code, $color_variables[$code] );
+		endif;
+	endif;
+
+}
+
+/*
+ * Parse CSS comments according to a pre-determined structure in order
+ * to break our variables into pre-defined sections, with documentation.
+ */
+function zombiestyleguide_parse_CSS( $file ) {
+
+	// Split our file into individual lines.
+	$lines = explode( "\n", file_get_contents( $file ) );
+
+	// Loop through every line to see what's up.
+	$i = 0;
+	$sections = array( array( 'title' => '', 'description' => '', 'variables' => '' ) );
+	$block = false;
+
+	foreach ( $lines as $line ) :
+		// First up, strip pesky whitespace.
+		$line = trim( $line );
+
+		if ( '//' === substr( $line, 0, 2 ) ) :
+			// We've got a CSS comment.
+			if ( $block ) :
+				// If this line is part of a comment block, add it to the existing section description.
+				$sections[$i]['description'] .= ltrim( $line, '//' );
+			else :
+				// Otherwise, create a new section array with this line as the title.
+				$i++;
+				$sections[$i]['title'] = ltrim( $line, '//' );
+				$sections[$i]['description'] = '';
+				$sections[$i]['variables'] = '';
+			endif;
+			$block = true; // We're currently in a comment block.
+
+		elseif ( '$' === substr( $line, 0, 1 ) ) :
+			// We've got a variable. Let's add it to our variables string.
+			$sections[$i]['variables'] .= $line;
+			$block = false; // If we were in a comment block, it's now ended.
+
+		else :
+			// Discard any other lines.
+			$block = false;
+		endif;
+	endforeach;
+
+	foreach ( $sections as $section ) : ?>
+
+	<div class="color-group">
+		<?php if ( array_key_exists( 'title', $section ) && $section['title'] ) : ?>
+		<div class="copy-text">
+			<h3 class="color-group-title"><?php echo $section['title']; ?></h3>
+			<?php if ( $section['description'] ) : ?>
+				<p><?php echo $section['description']; ?></p>
+			<?php endif; ?>
+		</div>
+		<?php endif; ?>
+		<?php zombiestyleguide_output_colour_variables( $section['variables'] ); ?>
+	</div><!-- .color-group -->
+	<?php endforeach;
+}
 ?>
 
 <h2 class="panel-title"><?php esc_html_e( 'Colours', 'zombiestyleguide' ); ?></h2>
-
-<div class="color-group">
 
 	<?php
 	// Get & read the colour variable file.
 	$options = get_option( 'zombiestyleguide_settings' );
 	if ( $options['zombiestyleguide_colorvariables'] ) {
-		$colors = zombiestyleguide_read_colour_variables( $options['zombiestyleguide_colorvariables'] );
-
-		// Display a swatch for each colour variable.
-		foreach( $colors as $key => $value ) {
-			zombiestyleguide_show_colour_swatch( $key, $value );
-		}
+		$colors = zombiestyleguide_parse_CSS( $options['zombiestyleguide_colorvariables'] );
 	}
 	?>
-</div>
