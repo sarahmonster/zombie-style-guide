@@ -10,10 +10,6 @@ body {
 	overflow: auto;
 }
 
-.styleguide .entry-content {
-	max-width: calc(100% - 15rem);
-}
-
 // Split into two columns on tablets and above.
 @include tablet {
 	.navigation {
@@ -28,12 +24,13 @@ body {
 	.entry-content {
 		margin-left: 18rem;
 		min-height: calc(100vh - 5.375rem);
+		max-width: calc(100% - 15rem);
 	}
 }
 
 // Navigation.
 .navigation {
-	background: $color__pure-white;
+	background: lighten($color__white, 10%);
 	text-align: center;
 }
 
@@ -49,22 +46,23 @@ body {
 	width: 100%;
 
 	a {
-		border-top: 1px solid $color__white;
+		border-top: 1px solid $color__neutral-highlight;
 		color: $color__black;
 		display: block;
-		padding: $size__site-gutter;
+		padding: $size__site-gutter/2;
 		text-decoration: none;
 	}
 
 	a:hover {
-		background: transparentize($color__white, 0.75);
+		background: transparentize($color__highlight, 0.95);
 	}
 
 	a.active {
-		background: transparentize($color__white, 0.5);
-		border-right: 4px solid $color__neutral;
-		color: $color__neutral;
+		background: transparentize($color__neutral-highlight, 0.95);
+		border-right: 4px solid $color__primary;
+		color: $color__neutral-text;
 		font-weight: 500;
+		width: 101%;
 	}
 
 	li:last-of-type a {

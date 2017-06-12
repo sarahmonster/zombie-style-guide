@@ -43,7 +43,7 @@ add_filter( 'template_include', 'wp_styleguide_page_template', 99 );
 
 function wp_styleguide_scripts() {
 	if ( is_page( 'styleguide' )  ) {
-		wp_enqueue_style( 'wp-styleguide', plugin_dir_url( __FILE__ ) . '/stylesheets/style-guide.css', null, false, 'all' );
+		wp_enqueue_style( 'wp-styleguide', plugin_dir_url( __FILE__ ) . '/stylesheets/zombie-style-guide.css', null, false, 'all' );
 
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'jquery-scrollto', plugin_dir_url( __FILE__ ) . 'js/jquery.scrollTo.min.js', array( 'jquery' ), false, true );

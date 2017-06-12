@@ -3,31 +3,33 @@
 }
 
 .color-group {
-	display: flex;
-	flex-wrap: wrap;
 	padding-bottom: $size__site-gutter*2;
 }
 
 .color-swatch {
+	border-radius: 50%;
 	display: inline-block;
-	height: 70vh;
+	height: 200px;
 	line-height: 1.2;
 	margin: 0 0 $size__site-gutter 0;
-	position: relative;
-	min-width: 200px;
-	flex-grow: 1;
+	width: 200px;
+	  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .color-swatch-label {
-	background: $color__pure-white;
-	font-size: 10pt;
+	color: $color__white;
+	font-size: 14pt;
 	font-weight: normal;
 	padding: 10px;
-	position: absolute;
-		right: 10px;
-		bottom: 10px;
-		left: 10px;
-	text-align: left;
+	width: 170px;
+	text-align: center;
+
+	dt, dd {
+		display: inline;
+		padding-bottom: 5px;
+	}
 
 	dt:first-of-type {
 		padding-top: 0;

@@ -1,0 +1,34 @@
+{
+  "name": "zombie-style-guide",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A WordPress plugin to create a (sort of) living style guide.",
+  "scripts": {
+    "gulp": "gulp",
+    "start": "gulp",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarahmonster/zombie-style-guide.git"
+  },
+  "author": "sarah semark",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/sarahmonster/zombie-style-guide/issues"
+  },
+  "homepage": "https://github.com/sarahmonster/zombie-style-guide#readme",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cache": "^0.4.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
