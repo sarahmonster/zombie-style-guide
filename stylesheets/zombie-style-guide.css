@@ -9,60 +9,54 @@ body {
   overflow: auto; }
 
 @media (min-width: 768px) {
-  .navigation {
+  .zombiestyleguide-navigation {
     position: fixed;
     top: 0;
     bottom: 0;
     border-right: 1px solid #AAABAF;
     padding-top: 0;
     width: 15rem; }
-  .entry-content {
+  .zombiestyleguide-site-main {
     margin-left: 18rem;
     min-height: calc(100vh - 5.375rem);
     max-width: calc(100% - 15rem); } }
 
-.navigation {
+.zombiestyleguide-navigation {
   background: white;
   text-align: center; }
 
-.navigation .logo {
+.zombiestyleguide-navigation .logo {
   padding: 40px; }
 
-.navigation ul {
+.zombiestyleguide-navigation ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
   text-align: left;
   width: 100%; }
-  .navigation ul a {
+  .zombiestyleguide-navigation ul a {
     border-top: 1px solid #AAABAF;
     color: #34353B;
     display: block;
     padding: 20px;
     text-decoration: none; }
-  .navigation ul a:hover {
+  .zombiestyleguide-navigation ul a:hover {
     background: rgba(33, 171, 175, 0.05); }
-  .navigation ul a.active {
+  .zombiestyleguide-navigation ul a.active {
     background: rgba(170, 171, 175, 0.05);
     border-right: 4px solid #ff6fbd;
     color: #555154;
     font-weight: 500;
     width: 101%; }
-  .navigation ul li:last-of-type a {
+  .zombiestyleguide-navigation ul li:last-of-type a {
     border-bottom: 1px solid #AAABAF; }
 
-.content {
-  padding: 40px; }
-  @media (min-width: 768px) {
-    .content {
-      padding: 80px; } }
-
-.panel {
+.zombiestyleguide-panel {
   border-bottom: 4px solid #AAABAF;
   min-height: 85vh;
   padding: 80px 0; }
 
-.panel-title {
+.zombiestyleguide-panel .panel-title {
   margin-bottom: 80px; }
 
 .copy-text {

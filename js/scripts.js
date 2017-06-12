@@ -11,8 +11,8 @@
 	* highlighting the current panel in the nav menu.
 	*/
 	function highlightActiveNav() {
-		var $sections = $( '.panel' );
-		var $navLinks = $( '.navigation a' );
+		var $sections = $( '.zombiestyleguide-panel' );
+		var $navLinks = $( '.zombiestyleguide-navigation a' );
 
 		// Use the Waypoints plugin to indicate our current nav item
 		$sections.waypoint( {
@@ -22,7 +22,7 @@
 					var panelID = activePanel.element.id;
 
 					// Find the active panel's corresponding link by matching the panel ID in the URL
-					var $activeLink = $( '.navigation a[href="#' + panelID + '"]' );
+					var $activeLink = $( '.zombiestyleguide-navigation a[href="#' + panelID + '"]' );
 					// Remove any existing classes
 					$navLinks.removeClass( 'active' );
 					// Highlight the currently active panel by adding a CSS class
@@ -51,7 +51,7 @@
 					var panelID = activePanel.element.id;
 
 					// Find the active panel's corresponding link by matching the panel ID in the URL
-					var $activeLink = $( '.navigation a[href="#' + panelID + '"]' );
+					var $activeLink = $( '.zombiestyleguide-navigation a[href="#' + panelID + '"]' );
 					// Remove any existing classes
 					$navLinks.removeClass( 'active' );
 					// Highlight the currently active panel by adding a CSS class

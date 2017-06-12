@@ -22,7 +22,7 @@
 
 		<div class="page">
 
-			<aside id="sidebar" class="navigation">
+			<aside id="sidebar" class="zombiestyleguide-navigation">
 				<div class="logo">
 				</div>
 
@@ -37,20 +37,25 @@
 
 			</aside>
 
-			<div class="entry-content">
+			<div class="site-main zombiestyleguide-site-main">
 
-				<section class="panel" id="colors">
+				<section class="zombiestyleguide-panel" id="colors">
 					<?php include( 'inc/colors.php' ); ?>
 				</section>
 
-				<section class="panel" id="typography">
+				<section class="zombiestyleguide-panel" id="typography">
 					<?php include( 'inc/typography.php' ); ?>
 				</section>
 
-				<section class="panel" id="buttons-forms">
+				<section class="zombiestyleguide-panel" id="buttons-forms">
 					<?php include( 'inc/buttons-and-forms.php' ); ?>
 				</section>
-				<section class="panel" id="components">
+
+				<section class="zombiestyleguide-panel" id="navigation">
+					<?php include( 'inc/navigation.php' ); ?>
+				</section><!-- content -->
+
+				<section class="zombiestyleguide-panel" id="components">
 					<?php include( 'inc/components.php' ); ?>
 				</section><!-- content -->
 

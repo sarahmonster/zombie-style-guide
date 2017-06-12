@@ -12,7 +12,7 @@ body {
 
 // Split into two columns on tablets and above.
 @include tablet {
-	.navigation {
+	.zombiestyleguide-navigation {
 		position: fixed;
 		top: 0;
 		bottom: 0;
@@ -21,7 +21,7 @@ body {
 		width: 15rem;
 	}
 
-	.entry-content {
+	.zombiestyleguide-site-main {
 		margin-left: 18rem;
 		min-height: calc(100vh - 5.375rem);
 		max-width: calc(100% - 15rem);
@@ -29,16 +29,16 @@ body {
 }
 
 // Navigation.
-.navigation {
+.zombiestyleguide-navigation {
 	background: lighten($color__white, 10%);
 	text-align: center;
 }
 
-.navigation .logo {
+.zombiestyleguide-navigation .logo {
 	padding: $size__site-gutter;
 }
 
-.navigation ul {
+.zombiestyleguide-navigation ul {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
@@ -70,23 +70,14 @@ body {
 	}
 }
 
-// Content.
-.content {
-	padding: $size__site-gutter;
-
-	@include tablet {
-		padding: $size__site-gutter*2;
-	}
-}
-
 // Content sections/panels.
-.panel {
+.zombiestyleguide-panel {
 	border-bottom: 4px solid $color__neutral;
 	min-height: 85vh;
 	padding: $size__site-gutter*2 0;
 }
 
-.panel-title {
+.zombiestyleguide-panel .panel-title {
 	margin-bottom: $size__site-gutter*2;
 }
 
