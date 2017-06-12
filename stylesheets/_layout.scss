@@ -89,7 +89,8 @@ p {
 	max-width: 640px; // Keeps line lengths readable.
 }
 
-h3 {
+.zombiestyleguide-panel h3 {
 	border-bottom: 2px solid;
-	padding: $size__site-gutter 0 5px 0;
+	padding: 0 0 5px 0;
+	margin-bottom: $size__site-gutter/2;
 }

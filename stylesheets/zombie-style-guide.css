@@ -44,7 +44,7 @@ body {
     background: rgba(33, 171, 175, 0.05); }
   .zombiestyleguide-navigation ul a.active {
     background: rgba(170, 171, 175, 0.05);
-    border-right: 4px solid #ff6fbd;
+    border-right: 4px solid #3F9CBC;
     color: #555154;
     font-weight: 500;
     width: 101%; }
@@ -65,15 +65,16 @@ body {
 p {
   max-width: 640px; }
 
-h3 {
+.zombiestyleguide-panel h3 {
   border-bottom: 2px solid;
-  padding: 40px 0 5px 0; }
+  padding: 0 0 5px 0;
+  margin-bottom: 20px; }
 
 .swatches {
   margin: 0 auto; }
 
 .color-group {
-  padding-bottom: 80px; }
+  padding-bottom: 20px; }
 
 .color-swatch {
   border-radius: 50%;
