@@ -94,34 +94,53 @@ function zombiestyleguide_parse_CSS( $file ) {
 	$i = 0;
 	$sections = array( array( 'title' => '', 'description' => '', 'variables' => '' ) );
 	$block = false;
+	$ignore = false;
 
 	foreach ( $lines as $line ) :
 		// First up, strip pesky whitespace.
 		$line = trim( $line );
+		$trimmer_line = substr( $line, 0, 20 );
+		$trimmer_line = str_replace( '//', '', $trimmer_line );
+		$trimmer_line = str_replace( ' ', '', $trimmer_line );
 
-		if ( '//' === substr( $line, 0, 2 ) ) :
-			// We've got a CSS comment.
-			if ( $block ) :
-				// If this line is part of a comment block, add it to the existing section description.
-				$sections[$i]['description'] .= ltrim( $line, '//' );
-			else :
-				// Otherwise, create a new section array with this line as the title.
-				$i++;
-				$sections[$i]['title'] = ltrim( $line, '//' );
-				$sections[$i]['description'] = '';
-				$sections[$i]['variables'] = '';
-			endif;
-			$block = true; // We're currently in a comment block.
-
-		elseif ( '$' === substr( $line, 0, 1 ) ) :
-			// We've got a variable. Let's add it to our variables string.
-			$sections[$i]['variables'] .= $line;
-			$block = false; // If we were in a comment block, it's now ended.
-
-		else :
-			// Discard any other lines.
-			$block = false;
+		if ( 'zsg:ignore' === $trimmer_line || $ignore ) :
+			// Begin ignoring
+			$ignore = true;
 		endif;
+
+		if ( !$ignore ) :
+			// Only process lines when we aren't in an ignore block.
+			if ( '//' === substr( $line, 0, 2 ) ) :
+				// We've got a CSS comment.
+				if ( $block ) :
+					// If this line is part of a comment block, add it to the existing section description.
+					$sections[$i]['description'] .= ltrim( $line, '//' );
+				else :
+					// Otherwise, create a new section array with this line as the title.
+					$i++;
+					$sections[$i]['title'] = ltrim( $line, '//' );
+					$sections[$i]['description'] = '';
+					$sections[$i]['variables'] = '';
+				endif;
+				$block = true; // We're currently in a comment block.
+
+			elseif ( '$' === substr( $line, 0, 1 ) ) :
+				// We've got a variable. Let's add it to our variables string.
+				$sections[$i]['variables'] .= $line;
+				$block = false; // If we were in a comment block, it's now ended.
+
+			else :
+				// Discard any other lines.
+				$block = false;
+			endif;
+		endif;
+
+
+		if ( $ignore && 'zsg:endignore' === $trimmer_line ) :
+			// End ignoring
+			$ignore = false;
+		endif;
+
 	endforeach;
 
 	foreach ( $sections as $section ) : ?>
